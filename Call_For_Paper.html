@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCARE 2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="images/tac-icon-blue-transparent.png" type="image/icon type">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="scripts.js" defer></script>
+
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lexend', sans-serif;
+}
+
+body{
+    background:#f6f9fc;
+    color:#333;
+}
+
+/* ===== HEADER FIX ===== */
+#header {
+    height: 90px;       /* EXACT navbar height */
+    width: 100%;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background: #fcfcfc;
+}
+
+
+
+/* ===== MAIN ===== */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px; /* spacing after header */
+}
+
+
+/* ===== PAGE WRAPPER ===== */
+.cfp-wrapper{
+    width:100%;
+    max-width:1100px;
+    padding:40px 20px 80px;
+}
+
+/* ===== TITLE ===== */
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.page-title h1{
+    font-size:42px;
+    font-weight:800;
+    color:#0a4fa3;
+}
+
+.page-title h1::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background:#0a4fa3;
+    margin:14px auto 0;
+    border-radius:4px;
+}
+
+/* ===== CARD ===== */
+.cfp-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:50px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.15);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.cfp-card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.cfp-card p{
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+/* ===== SUBHEADINGS ===== */
+.cfp-subtitle{
+    margin-top:40px;
+    margin-bottom:14px;
+    font-size:22px;
+    font-weight:700;
+    color:#1d3d55;
+}
+
+/* ===== LIST ===== */
+.cfp-list{
+    margin-left:22px;
+}
+
+.cfp-list li{
+    margin-bottom:10px;
+    line-height:1.7;
+}
+
+/* ===== BUTTONS ===== */
+.cfp-actions{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.cfp-btn{
+    padding:14px 26px;
+    font-size:15px;
+    font-weight:600;
+    border-radius:8px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:all 0.3s ease;
+}
+
+.cfp-btn.primary{
+    background:#0a4fa3;
+    color:#fff;
+}
+
+.cfp-btn.primary:hover{
+    background:#083b7a;
+    transform:translateY(-2px);
+}
+
+.cfp-btn.secondary{
+    background:#eef2ff;
+    color:#0a4fa3;
+}
+
+.cfp-btn.secondary:hover{
+    background:#dbe4ff;
+    transform:translateY(-2px);
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header {
+        position: fixed;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .box-icon {
+        display: flex;
+        position: fixed;
+        top: 22px;
+        right: 20px;
+        z-index: 11000;
+        cursor: pointer;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: #ffffff;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 10px 0;
+        overflow-y: auto;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        z-index: 10000;
+    }
+
+    nav ul.showmenu {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 14px 22px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    nav ul li a.link-btn {
+        margin: 12px 20px;
+        text-align: center;
+    }
+
+    /* MOBILE DROPDOWN */
+    nav ul li ul.dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        background: #f6f7fb;
+        box-shadow: none;
+    }
+
+    nav ul li.open ul.dropdown {
+        display: block;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="header" class="header"></div>
+
+<main>
+  <div class="cfp-wrapper">
+
+    <div class="page-title">
+      <h1>Call for Papers</h1>
+    </div>
+
+    <div class="cfp-card" id="cfpCard">
+
+ <p>
+  <strong>HCARE 2026 Workshop on Human-Centered AI for Requirements Engineering will be co-located with the IEEE International Conference on Requirements Engineering (RE 2026).</strong>
+  The workshop provides a dedicated forum for researchers and practitioners interested in applying artificial intelligence (AI), particularly large language models and generative AI, to support human-centered Requirements Engineering activities.
+  Requirements Engineering is inherently human-driven and socio-technical. Practitioners rely on stakeholder communication, domain knowledge, documentation, and professional judgment to elicit, analyze, prioritize, and evolve requirements. As AI-driven tools become increasingly integrated into RE workflows, maintaining human oversight, stakeholder empathy, and responsible decision-making becomes essential.
+</p>
+
+        <h3 class="cfp-subtitle">Topics of Interest</h3>
+
+<p>
+In line with the research themes of <strong>RE 2026, HCARE 2026</strong> emphasizes human-centered approaches to the integration of artificial intelligence in Requirements Engineering. Submissions addressing a broad range of RE concerns are encouraged, provided that they demonstrate clear RE relevance and contribute to effective human–AI collaboration, responsible decision-making, and workforce transformation.
+</p>
+
+<p>
+Core topics of interest include, but are not limited to, the following:
+</p>
+
+<ul class="cfp-list">
+  <li>Human–AI collaboration patterns in Requirements Engineering</li>
+  <li>Trust calibration and appropriate reliance on AI recommendations</li>
+  <li>Explainability and interpretability of AI-assisted RE tools</li>
+  <li>Human-centered design and evaluation of AI-powered RE tools</li>
+  <li>Workforce transformation and skill evolution in AI-augmented RE</li>
+  <li>Ethical and responsible AI use in requirements decisions</li>
+  <li>Stakeholder acceptance and empathy in AI-supported RE processes</li>
+  <li>Cognitive load and decision support in AI-assisted RE workflows</li>
+  <li>Industrial experiences with AI adoption in Requirements Engineering</li>
+  <li>Organizational change management for AI integration in RE teams</li>
+  <li>Education, training, and upskilling for AI-augmented RE practice</li>
+  <li>Negative results, failures, and lessons learned from AI adoption in RE</li>
+</ul>
+<h3 class="cfp-subtitle">Paper Categories</h3>
+
+<p>HCARE 2026 invites the following types of contributions:</p>
+
+<ul class="cfp-list">
+  <li>
+    <strong>Research papers (6–8 pages, IEEE format)</strong>
+    presenting novel methods, frameworks, or empirical studies with clear relevance to Requirements Engineering and human-centered AI.
+  </li>
+
+  <li>
+    <strong>Experience reports (4–6 pages, IEEE format)</strong>
+    describing industrial or applied experiences, challenges, and lessons learned from adopting AI in Requirements Engineering practice.
+  </li>
+
+  <li>
+    <strong>Vision or position papers (4 pages, IEEE format)</strong>
+    offering forward-looking perspectives, conceptual frameworks, or critical reflections on human–AI collaboration and workforce transformation in Requirements Engineering.
+  </li>
+
+  <p>
+    All submissions must clearly articulate their relevance to Requirements Engineering and explain how proposed approaches impact, support, or transform human work and decision-making. All submissions must adhere to the IEEE conference formatting guidelines and will be reviewed by at least two program committee members. Accepted papers will be included in the RE 2026 workshop proceedings and published in the IEEE Digital Library.
+  </p>
+</ul>
+
+<h3 class="cfp-subtitle">Paper Review & Publication</h3>
+
+<p>
+All submissions will be reviewed by at least two members of the Program Committee with expertise in Requirements Engineering, human-centered software engineering, and AI-enabled systems. Submissions will be evaluated based on the following criteria:
+</p>
+
+<ul class="cfp-list">
+  <li>Relevance to human-centered AI in Requirements Engineering (30%);</li>
+  <li>Soundness of methodology or argumentation (30%);</li>
+  <li>Practical relevance and actionability (20%);</li>
+  <li>Clarity and presentation quality (20%).</li>
+</ul>
+
+<p>
+Papers addressing real-world challenges of AI adoption, workforce transformation, or human–AI collaboration patterns will receive particular attention. All submissions must follow the <strong>IEEE conference formatting guidelines</strong> and be written in English. Papers, including references, must be submitted electronically in PDF format via EasyChair under the <strong>RE 2026 Workshops track</strong>. Each submission will undergo a peer-review process conducted by the workshop’s Program Committee. Accepted papers will be published in the <strong>RE 2026 Workshop Proceedings</strong> and made available through the <strong>IEEE Digital Library</strong>.
+The Program Committee will comprise 10–12 international experts from at least six countries, balanced across academia (60%) and industry (40%), reflecting HCARE’s emphasis on practical workforce challenges. Committee expertise will span Requirements Engineering, human–computer interaction, organizational change, AI ethics, and professional education. Conflicts of interest will be managed in accordance with IEEE policies. Organizers will not review submissions where conflicts exist and will collectively submit at most one paper.
+</p>
+<p>
+<strong>Please note that no changes to the list of authors will be permitted after submission.</strong>
+</p>
+<div class="cfp-actions">
+  <a href="https://conf.researchr.org/track/RE-2026/RE-2026-workshops#Formatting-Instructions"
+     target="_blank" class="cfp-btn secondary">
+    <i class="fa-solid fa-file-lines"></i> IEEE Format
+  </a>
+
+  <a href="#" class="cfp-btn primary">
+    <i class="fa-solid fa-paper-plane"></i> Submit Paper
+  </a>
+</div>
+
+
+    </div>
+
+  </div>
+</main>
+
+<div id="footer"></div>
+
+<script>
+const card = document.getElementById("cfpCard");
+new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    card.classList.add("visible");
+  }
+},{threshold:0.3}).observe(card);
+</script>
+
+</body>
+</html>
