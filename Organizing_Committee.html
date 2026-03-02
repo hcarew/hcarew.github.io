@@ -15,29 +15,11 @@
   <script src="scripts.js" defer></script>
 
 <style>
-/* ================= BASE ================= */
 
-.text-page {
-  width: 80%;
-  margin: 20px auto;
-  padding-bottom: 20px; /* 👈 pushes footer down */
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Lexend', sans-serif;
-}
-
-body{
-  background:#f6f9fc;
-  color:#333;
-}
-
-/* Header spacer (DO NOT REMOVE) */
-#header{
-  height:90px;
+/* ===== PAGE BASE ===== */
+#header {
+    height: 90px;
+    width: 100%;
 }
 .header {
     position: fixed;
@@ -49,451 +31,356 @@ body{
     background: #fcfcfc;
 }
 
-/* ================= MAIN ================= */
-main{
-  width:100%;
+/* ===== REMOVE DEFAULT SECTION GAP ===== */
+section{
+  margin:0;
+  padding:0;
+}
+
+/* ===== SUB-HEADING ===== */
+#section-title{
+  text-align:center;
+  margin:0 0 12px 0;   /* smaller bottom space */
+  position:relative;
+}
+
+#section-title h2{
+  font-size:30px;
+  color:#0a4fa3;
+  display:inline-block;
+  position:relative;
+  margin: 5px;
+}
+
+#section-title h2::after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:3px;
+  background:#0a4fa3;
+  left:50%;
+  bottom:-8px;
+  transform:translateX(-50%);
+  animation:slide 1.2s ease;
+}
+
+/* ===== SUB-HEADING ===== */
+.section-title{
+  text-align:center;
+  margin:0 0 12px 0;   /* smaller bottom space */
+  position:relative;
+}
+
+.section-title h2{
+  font-size:15px;
+  color:#0a4fa3;
+  display:inline-block;
+  position:relative;
+  margin: 2px;
+}
+
+.section-title h2::after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:3px;
+  background:#0a4fa3;
+  left:50%;
+  bottom:-8px;
+  transform:translateX(-50%);
+  animation:slide 1.2s ease;
+}
+
+@keyframes slide{
+  from{width:0;}
+  to{width:70%;}
+}
+
+/* ===== ROW ===== */
+.row{
   display:flex;
   justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-/* ================= WRAPPER ================= */
-.page-wrapper{
-  width:100%;
-  max-width:1100px;
-  padding:40px 20px 90px;
-}
-
-/* ================= TITLE ================= */
-.page-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.page-title h1{
-  font-size:42px;
-  font-weight:800;
-  color:#0a4fa3;
-}
-
-.page-title h1::after{
-  content:"";
-  display:block;
-  width:90px;
-  height:4px;
-  background:#0a4fa3;
-  margin:14px auto 0;
-  border-radius:4px;
-}
-
-/* ================= CARD ================= */
-.submission-card{
+/* ===== CARD ===== */
+.card{
+  width:260px;
   background:#fff;
-  border-radius:18px;
-  padding:50px;
-  box-shadow:0 30px 70px rgba(0,0,0,0.15);
-
-  opacity:0;
-  transform:translateY(40px);
-  transition:all .8s ease;
-}
-
-.submission-card.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.submission-card p{
-  font-size:16px;
-  line-height:1.9;
-  margin-bottom:18px;
-  text-align:justify;
-}
-
-/* ================= HEADER ROW ================= */
-.card-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.card-header h3{
-  font-size:22px;
-  font-weight:700;
-  color:#1d3d55;
-}
-
-#darkModeToggle{
-  border:none;
-  background:#eef2ff;
-  padding:6px 10px;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-/* ================= COUNTDOWN ================= */
-.global-countdown{
-  background:#f5f7fb;
-  padding:12px 16px;
+  padding:10px 16px;
   border-radius:8px;
-  margin-bottom:25px;
-  font-size:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.05);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:all 0.3s ease;
+  border:1px solid transparent;
 }
 
-.global-countdown span{
-  color:#b30000;
-  font-weight:600;
+.card:hover{
+  border:1px solid #0a4fa3;
+  background:#f9fbff;
+  box-shadow:0 5px 18px rgba(10,79,163,0.12);
 }
 
-/* ================= TABLE ================= */
-.styled-table{
-  width:100%;
-  border-collapse:collapse;
-}
-
-.styled-table th,
-.styled-table td{
-  padding:14px 16px;
-  border-bottom:1px solid #e2e6ef;
-}
-
-.styled-table th{
+.info{
   text-align:left;
-  font-weight:600;
 }
 
-.styled-table td{
-  position:relative;
-  padding-left:45px;
-  text-align:right;
-  color:#0a4fa3;
+.name{
+  font-size:13.5px;
   font-weight:600;
+  color:#222;
+  margin-bottom:2px;
 }
 
-/* ================= TIMELINE ================= */
-.timeline-dot{
-  width:10px;
-  height:10px;
-  background:#0a4fa3;
+.affiliation{
+  font-size:11.5px;
+  color:#666;
+}
+
+/* Email icon */
+.email{
+  width:26px;
+  height:26px;
   border-radius:50%;
-  position:absolute;
-  left:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  background:#eef2ff;
+  color:#0a4fa3;
+  transition:all 0.3s ease;
+  text-decoration:none;
 }
 
-.timeline-line{
-  position:absolute;
-  left:22px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:#d4def5;
+.email:hover{
+  background:#0a4fa3;
+  color:#fff;
+  transform:rotate(12deg);
 }
 
-/* ================= ROW ANIMATION ================= */
-.styled-table tr{
+/* ===== VERY TIGHT SECTION SPACING ===== */
+.text-page {
+  padding:20px 20px;   /* reduced from 28px */
+}
+
+/* remove extra gap between sections */
+.text-page + .text-page{
+  margin-top:0;
+}
+
+/* ===== LIST STYLE ===== */
+.committee-list{
+  max-width:900px;
+  margin:auto;
+}
+
+/* Each member row */
+.member{
+  background:#fff;
+  padding:10px 14px;
+  margin-bottom:8px;
+  border-radius:6px;
+  font-size:13.5px;
+  border-left:3px solid transparent;
+  transition:all 0.3s ease;
+
+  /* Animation */
   opacity:0;
-  transform:translateX(-20px);
-  transition:.4s ease;
+  transform:translateX(-15px);
+  animation:slideIn 0.6s ease forwards;
 }
 
-.styled-table tr.visible{
-  opacity:1;
-  transform:translateX(0);
+/* Stagger animation */
+.member:nth-child(1){animation-delay:0.05s;}
+.member:nth-child(2){animation-delay:0.1s;}
+.member:nth-child(3){animation-delay:0.15s;}
+.member:nth-child(4){animation-delay:0.2s;}
+.member:nth-child(5){animation-delay:0.25s;}
+.member:nth-child(6){animation-delay:0.3s;}
+
+@keyframes slideIn{
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 }
 
-/* ================= DARK MODE ================= */
-body.dark{
-  background:#121212;
-  color:#eaeaea;
+/* Hover effect */
+.member:hover{
+  border-left:3px solid #0a4fa3;
+  background:#f9fbff;
 }
 
-body.dark .submission-card{
-  background:#1e1e1e;
+/* Name bold */
+.member strong{
+  font-weight:600;
+  color:#222;
 }
 
-body.dark .global-countdown{
-  background:#252525;
+/* Responsive */
+@media(max-width:700px){
+  .member{
+    font-size:12.5px;
+  }
 }
 
-@media only screen and (max-width: 1024px) {
-
-    header {
-        position: fixed;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    .box-icon {
-        display: flex;
-        position: fixed;
-        top: 22px;
-        right: 20px;
-        z-index: 11000;
-        cursor: pointer;
-    }
-
-    nav ul {
-        position: fixed;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 90px);
-        background-color: #ffffff;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 10px 0;
-        overflow-y: auto;
-
-        box-shadow: 0 10px 25px rgba(0,0,0,.2);
-        z-index: 10000;
-    }
-
-    nav ul.showmenu {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    nav ul li a {
-        padding: 14px 22px;
-        font-size: 16px;
-        width: 100%;
-    }
-
-    nav ul li a.link-btn {
-        margin: 12px 20px;
-        text-align: center;
-    }
-
-    /* MOBILE DROPDOWN */
-    nav ul li ul.dropdown {
-        position: static;
-        display: none;
-        width: 100%;
-        background: #f6f7fb;
-        box-shadow: none;
-    }
-
-    nav ul li.open ul.dropdown {
-        display: block;
-    }
-}
 
 </style>
-</head>
 
+</head>
 <body>
 
-<div id="header" class="header"></div>
+  <!-- Header is included here by JS - check scripts.js  -->
+  <div id="header" class="header"></div>
 
-<main>
-  <div class="page-wrapper">
+  <main>
 
-    <div class="page-title">
-      <h1>Important Dates</h1>
+
+<section class="text-page">
+      <!-- ===== HEADING ===== -->
+
+<div id="section-title">
+  <h2>Organizing Committee</h2>
+</div>
+
+<div class="section-title">
+  <h2>Workshop Chair</h2>
+</div>
+
+<div class="row">
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Khubaib Amjad Alam</div>
+      <div class="affiliation">Al-Ain University, UAE</div>
     </div>
-
-    <div class="submission-card" id="datesCard">
-
-      <p>
-        The <strong>HCARE 2026 Workshop</strong> follows the submission timeline of <strong>Requirements Engineering 2026.</strong>
-        Authors are requested to carefully observe the following important dates.
-      </p>
-
-      <div class="card-header">
-        <h3>Submission Timeline</h3>
-      </div>
-
-      <div class="global-countdown">
-        <strong>Next Deadline:</strong>
-        <span id="globalCountdown">Loading…</span>
-      </div>
-
-      <table class="styled-table">
-        <tbody>
-
-          <tr data-deadline="2026-05-08T23:59:59">
-            <th>Abstract Submission</th>
-            <td>
-              <span class="timeline-line"></span>
-              <span class="timeline-dot"></span>
-              Mon 18 May 2026
-              <div class="countdown"></div>
-            </td>
-          </tr>
-
-          <tr data-deadline="2026-05-25T23:59:59">
-            <th>Paper Submission</th>
-            <td>
-              <span class="timeline-line"></span>
-              <span class="timeline-dot"></span>
-              Mon 25 May 2026
-              <div class="countdown"></div>
-            </td>
-          </tr>
-
-          <tr data-deadline="2026-06-22T23:59:59">
-            <th>Notification</th>
-            <td>
-              <span class="timeline-line"></span>
-              <span class="timeline-dot"></span>
-              Mon 22 Jun 2026
-              <div class="countdown"></div>
-            </td>
-          </tr>
-
-          <tr data-deadline="2026-07-02T23:59:59">
-            <th>Camera-ready</th>
-            <td>
-              <span class="timeline-line"></span>
-              <span class="timeline-dot"></span>
-              Thu 2 Jul 2026
-              <div class="countdown"></div>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-    </div>
-
+    <a href="mailto:email1@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
   </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Imen Benzarti</div>
+      <div class="affiliation">ÉTS Montréal, Canada</div>
+    </div>
+    <a href="mailto:email2@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Amel Bennaceur</div>
+      <div class="affiliation">The Open University, UK</div>
+    </div>
+    <a href="mailto:email3@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Hafedh Mili</div>
+      <div class="affiliation">UQAM, Canada</div>
+    </div>
+    <a href="mailto:email4@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+</div>
+</section>
+
+
+
+<section class="text-page">
+      <!-- ===== HEADING ===== -->
+<div class="section-title">
+  <h2>Publicity & Outreach</h2>
+</div>
+<div class="row">
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Nadeem Abbas</div>
+      <div class="affiliation">Linnaeus University, Sweden</div>
+    </div>
+    <a href="mailto:email5@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Haroon Mahmood</div>
+      <div class="affiliation">Al-Ain University, UAE</div>
+    </div>
+    <a href="mailto:email6@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+</div>
+</section>
+
+
+<section class="text-page">
+      <!-- ===== HEADING ===== -->
+<div class="section-title">
+  <h2>Web Chair</h2>
+</div>
+<div class="row">
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Muhammad Haroon</div>
+      <div class="affiliation">Senior Researcher - AISEL</div>
+    </div>
+    <a href="mailto:i229812@nu.edu.pk" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+</div>
+</section>
+
+<section class="text-page">
+      <!-- ===== HEADING ===== -->
+
+<!-- ================= PROGRAM COMMITTEE ================= -->
+<div id="section-title">
+  <h2>Program Committee</h2>
+</div>
+
+<div class="member">
+<strong>Alvine Boaye Belle</strong> — Lassonde School of Engineering, York University, Canada
+</div>
+
+<div class="member">
+<strong>Jan-Philipp Steghöfer</strong> — XITASO GmbH IT & Software Solutions, Germany
+</div>
+
+<div class="member">
+<strong>Renata Medeiros de Carvalho</strong> — Eindhoven University of Technology, Netherlands
+</div>
+
+<div class="member">
+<strong>Darine Ameyed</strong> — Aduna Global, Canada
+</div>
+
+</div>
+</section>
+
+</section>
+
 </main>
 
-<div id="footer"></div>
-
-<script>
-/* Fade-in */
-const card=document.getElementById("datesCard");
-new IntersectionObserver(e=>{
-  if(e[0].isIntersecting) card.classList.add("visible");
-},{threshold:.3}).observe(card);
-
-/* Row animation */
-document.querySelectorAll(".styled-table tr").forEach((row,i)=>{
-  setTimeout(()=>row.classList.add("visible"),200*i);
-});
-
-/* Dark mode */
-document.getElementById("darkModeToggle").onclick=()=>{
-  document.body.classList.toggle("dark");
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ================= DARK MODE ================= */
-  const toggle = document.getElementById("darkModeToggle");
-
-  if (toggle) {
-    if (localStorage.theme === "dark") {
-      document.body.classList.add("dark");
-    }
-
-    toggle.onclick = () => {
-      document.body.classList.toggle("dark");
-      localStorage.theme = document.body.classList.contains("dark")
-        ? "dark"
-        : "light";
-    };
-  }
-
-  /* ================= MAIN CARD ANIMATION ================= */
-  const card = document.querySelector(".submission-card");
-  if (!card) return; // safety
-
-  const rows = card.querySelectorAll(".styled-table tr");
-  const dots = card.querySelectorAll(".timeline-dot");
-
-  new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      card.classList.add("visible");
-
-      rows.forEach((row, i) => {
-        setTimeout(() => {
-          row.classList.add("visible");
-          if (dots[i]) {
-            dots[i].style.transform = "translateY(-50%) scale(1)";
-          }
-        }, i * 120);
-      });
-    }
-  }, { threshold: 0.3 }).observe(card);
-
-  /* ================= PER-ROW COUNTDOWNS ================= */
-  let nextRow = null;
-  let nextDeadline = null;
-
-  rows.forEach(row => {
-    const deadlineStr = row.dataset.deadline;
-    if (!deadlineStr) return;
-
-    const deadline = new Date(deadlineStr);
-    const cd = row.querySelector(".countdown");
-    if (!cd) return;
-
-    if (deadline > new Date() && (!nextDeadline || deadline < nextDeadline)) {
-      nextDeadline = deadline;
-      nextRow = row;
-    }
-
-    const updateRowCountdown = () => {
-      const diff = deadline - new Date();
-      if (diff <= 0) {
-        cd.textContent = "Passed";
-        return;
-      }
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      cd.textContent = `${d}d ${h}h remaining`;
-    };
-
-    updateRowCountdown();
-    setInterval(updateRowCountdown, 60000);
-  });
-
-  if (nextRow) {
-    nextRow.classList.add("next-upcoming");
-  }
-
-  /* ================= GLOBAL COUNTDOWN ================= */
-  const globalEl = document.getElementById("globalCountdown");
-
-  if (globalEl) {
-    const updateGlobal = () => {
-      if (!nextDeadline) {
-        globalEl.textContent = "No upcoming deadlines";
-        return;
-      }
-
-      const diff = nextDeadline - new Date();
-      if (diff <= 0) {
-        globalEl.textContent = "Deadline passed";
-        return;
-      }
-
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-
-      globalEl.textContent = `${d}D ${h}H ${m}M Remaining`;
-    };
-
-    updateGlobal();
-    setInterval(updateGlobal, 60000);
-  }
-
-});
-
-</script>
+  <!-- Footer is included here by JS - check scripts.js  -->
+  <div id="footer"></div>
 
 </body>
 </html>
