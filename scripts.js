@@ -16,13 +16,7 @@ function loadComponents() {
             <li><a href="index.html">Home</a></li>
             <li><a href="dates.html">Important Dates</a></li>
             <li><a href="Call_For_Paper.html">Call For Papers</a></li>
-            <li><a href="#">Committees</a>
-            <ul class="dropdown">
-                <li><a href="Organizing_Committee.html">Organizing Committee</a></li>
-                <li><a href="Program_Committee.html">Program Committee</a></li>  
-                <li><a href="Steering_Committee.html">Steering Committee</a></li>  
-            </ul>
-            </li>
+            <li><a href="Organizing_Committee.html">Committees</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="#" class="link-btn">Registration</a></li>
         </ul>
