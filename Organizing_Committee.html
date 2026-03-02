@@ -14,11 +14,11 @@
 
   <script src="scripts.js" defer></script>
 
-  <style>
+<style>
 
 /* ===== PAGE BASE ===== */
 #header {
-    height: 90px;       /* EXACT navbar height */
+    height: 90px;
     width: 100%;
 }
 .header {
@@ -31,28 +31,62 @@
     background: #fcfcfc;
 }
 
-/* ===== HEADING ===== */
+/* ===== REMOVE DEFAULT SECTION GAP ===== */
+section{
+  margin:0;
+  padding:0;
+}
+
+/* ===== SUB-HEADING ===== */
+#section-title{
+  text-align:center;
+  margin:0 0 12px 0;   /* smaller bottom space */
+  position:relative;
+}
+
+#section-title h2{
+  font-size:30px;
+  color:#0a4fa3;
+  display:inline-block;
+  position:relative;
+  margin: 5px;
+}
+
+#section-title h2::after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:3px;
+  background:#0a4fa3;
+  left:50%;
+  bottom:-8px;
+  transform:translateX(-50%);
+  animation:slide 1.2s ease;
+}
+
+/* ===== SUB-HEADING ===== */
 .section-title{
   text-align:center;
-  margin-bottom:50px;
+  margin:0 0 12px 0;   /* smaller bottom space */
   position:relative;
 }
 
 .section-title h2{
-  font-size:34px;
+  font-size:15px;
   color:#0a4fa3;
   display:inline-block;
   position:relative;
+  margin: 2px;
 }
 
 .section-title h2::after{
   content:"";
   position:absolute;
   width:70%;
-  height:4px;
+  height:3px;
   background:#0a4fa3;
   left:50%;
-  bottom:-12px;
+  bottom:-8px;
   transform:translateX(-50%);
   animation:slide 1.2s ease;
 }
@@ -62,176 +96,136 @@
   to{width:70%;}
 }
 
-/* ===== GRID ===== */
-.team-container{
-  max-width:1200px;
-  margin:auto;
-}
-
+/* ===== ROW ===== */
 .row{
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
-  gap:25px;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
 /* ===== CARD ===== */
-.our-team{
+.card{
   width:260px;
-  background:#ffffff;
-  padding:30px 20px 50px;
-  border-radius:14px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:transform 0.35s ease;
-}
-
-.our-team:hover{
-  transform:translateY(-8px);
-}
-
-/* ===== IMAGE ===== */
-.picture{
-  width:120px;
-  height:120px;
-  margin:0 auto 15px;
-  position:relative;
-}
-
-.picture::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:#0a4fa3;
-  border-radius:50%;
-  transform:scale(0);
-  transition:0.4s ease;
-}
-
-.our-team:hover .picture::before{
-  transform:scale(1);
-}
-
-.picture img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  position:relative;
-  z-index:2;
-  transition:0.4s ease;
-}
-
-.our-team:hover img{
-  transform:scale(0.75);
-  box-shadow:0 0 0 10px #fff;
-}
-
-/* ===== TEXT ===== */
-.name{
-  font-size:17px;
-  font-weight:700;
-  color:#0a4fa3;
-  margin-top:8px;
-}
-
-.title{
-  font-size:14px;
-  color:#555;
-  margin-bottom:10px;
-}
-
-/* ===== ROLE BADGES ===== */
-.roles{
+  background:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.05);
   display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  justify-content:center;
+  align-items:center;
+  justify-content:space-between;
+  transition:all 0.3s ease;
+  border:1px solid transparent;
 }
 
-.role-badge{
+.card:hover{
+  border:1px solid #0a4fa3;
+  background:#f9fbff;
+  box-shadow:0 5px 18px rgba(10,79,163,0.12);
+}
+
+.info{
+  text-align:left;
+}
+
+.name{
+  font-size:13.5px;
+  font-weight:600;
+  color:#222;
+  margin-bottom:2px;
+}
+
+.affiliation{
+  font-size:11.5px;
+  color:#666;
+}
+
+/* Email icon */
+.email{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size:11px;
-  padding:4px 10px;
   background:#eef2ff;
   color:#0a4fa3;
-  border-radius:999px;
-  font-weight:600;
+  transition:all 0.3s ease;
+  text-decoration:none;
 }
 
-/* ===== ICON BAR ===== */
-.social{
-  position:absolute;
-  bottom:-60px;
-  left:0;
-  width:100%;
+.email:hover{
   background:#0a4fa3;
-  padding:10px 0;
-  transition:0.4s ease;
-}
-
-.our-team:hover .social{
-  bottom:0;
-}
-
-.social li{
-  display:inline-block;
-  margin:0 8px;
-}
-
-.social li a{
   color:#fff;
-  font-size:18px;
-  transition:0.3s;
+  transform:rotate(12deg);
 }
 
-.social li a:hover{
-  color:#ffd700;
-}
-
+/* ===== VERY TIGHT SECTION SPACING ===== */
 .text-page {
-  width: 80%;
-  margin: 20px auto;
-  padding-bottom: 20px; /* 👈 pushes footer down */
+  padding:20px 20px;   /* reduced from 28px */
 }
 
-.our-team_p{
-  width: 100%;
-  max-width: 700px;      /* 👈 horizontal width */
-  background:#ffffff;
-  padding: 40px 30px;
-  border-radius:14px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:transform 0.35s ease;
-
+/* remove extra gap between sections */
+.text-page + .text-page{
+  margin-top:0;
 }
 
-.our-team_p::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 80px;
-  height: 4px;
-  background: #0a4fa3;
-  transform: translateX(-50%);
-  border-radius: 2px;
+/* ===== LIST STYLE ===== */
+.committee-list{
+  max-width:900px;
+  margin:auto;
 }
 
+/* Each member row */
+.member{
+  background:#fff;
+  padding:10px 14px;
+  margin-bottom:8px;
+  border-radius:6px;
+  font-size:13.5px;
+  border-left:3px solid transparent;
+  transition:all 0.3s ease;
 
-.row_p{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  min-height: 10vh;   /* 👈 keeps it visually centered */
-  gap:25px;
+  /* Animation */
+  opacity:0;
+  transform:translateX(-15px);
+  animation:slideIn 0.6s ease forwards;
 }
 
+/* Stagger animation */
+.member:nth-child(1){animation-delay:0.05s;}
+.member:nth-child(2){animation-delay:0.1s;}
+.member:nth-child(3){animation-delay:0.15s;}
+.member:nth-child(4){animation-delay:0.2s;}
+.member:nth-child(5){animation-delay:0.25s;}
+.member:nth-child(6){animation-delay:0.3s;}
+
+@keyframes slideIn{
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* Hover effect */
+.member:hover{
+  border-left:3px solid #0a4fa3;
+  background:#f9fbff;
+}
+
+/* Name bold */
+.member strong{
+  font-weight:600;
+  color:#222;
+}
+
+/* Responsive */
+@media(max-width:700px){
+  .member{
+    font-size:12.5px;
+  }
+}
 
 
 </style>
@@ -247,74 +241,57 @@
 
 <section class="text-page">
       <!-- ===== HEADING ===== -->
+
+<div id="section-title">
+  <h2>Organizing Committee</h2>
+</div>
+
 <div class="section-title">
   <h2>Workshop Chair</h2>
 </div>
 
-<!-- ===== TEAM ===== -->
-<div class="team-container">
-  <div class="row">
+<div class="row">
 
-    <!-- 1 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/KhubaibAmjad.jpeg">
-      </div>
-      <h3 class="name">Khubaib Amjad Alam</h3>
-      <h4 class="title">Al-Ain University UAE</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?user=s_BMc5YAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/0000-0002-9476-2940"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="https://aau.ac.ae/en/staff/khubaib-Alam"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
+  <div class="card">
+    <div class="info">
+      <div class="name">Khubaib Amjad Alam</div>
+      <div class="affiliation">Al-Ain University, UAE</div>
     </div>
-
-    <!-- 2 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/ImenBenzarti.jpeg">
-      </div>
-      <h3 class="name">Imen Benzarti</h3>
-      <h4 class="title">ÉTS Montréal Canada</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?user=i0lnR_IAAAAJ&hl=fr"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/0000-0003-0658-9605"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="https://www.etsmtl.ca/etudier-a-lets/corps-enseignant/imbenzarti"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
-    </div>
-
-    <!-- 3 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/Amel.jpeg">
-      </div>
-      <h3 class="name">Amel Bennaceur</h3>
-      <h4 class="title">The Open University UK</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?user=rViNPo0AAAAJ&hl=fr"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/0000-0002-6124-9622"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="https://profiles.open.ac.uk/amel-bennaceur"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
-    </div>
-
-
-        <!-- 4 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/Hafedh.jpeg">
-      </div>
-      <h3 class="name">Hafedh Mili</h3>
-      <h4 class="title">Director of LATECE Lab</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?hl=fr&user=3xTNILIAAAAJ&view_op=list_works&sortby=pubdate"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://rocketreach.co/hafedh-mili-email_105812395"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
-    </div>
+    <a href="mailto:khubaib.alam@aau.ac.ae" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
   </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Imen Benzarti</div>
+      <div class="affiliation">ÉTS Montréal, Canada</div>
+    </div>
+    <a href="mailto:imen.benzarti@etsmtl.ca" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Amel Bennaceur</div>
+      <div class="affiliation">The Open University, UK</div>
+    </div>
+    <a href="mailto:amel.bennaceur@open.ac.uk" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Hafedh Mili</div>
+      <div class="affiliation">UQAM, Canada</div>
+    </div>
+    <a href="mailto:email4@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
 </div>
 </section>
 
@@ -325,42 +302,28 @@
 <div class="section-title">
   <h2>Publicity & Outreach</h2>
 </div>
+<div class="row">
 
-<!-- ===== TEAM ===== -->
-<div class="team-container">
-  <div class="row">
-
-    <!-- 1 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/NadeemAbbas.jpeg">
-      </div>
-      <h3 class="name">Nadeem Abbas</h3>
-      <h4 class="title">Linnaeus University Sweden</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?user=EHbIi1sAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/0000-0002-7555-7300"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="https://lnu.se/en/staff/nadeem.abbas/"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
+  <div class="card">
+    <div class="info">
+      <div class="name">Nadeem Abbas</div>
+      <div class="affiliation">Linnaeus University, Sweden</div>
     </div>
-
-    <!-- 2 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/Haroon_Mahmood.jpeg">
-      </div>
-      <h3 class="name">Haroon Mahmood</h3>
-      <h4 class="title">Al-Ain University UAE</h4>
-
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?user=TJv3l2QAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/0000-0003-4675-1689"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="https://aau.ac.ae/en/staff/haroon-mahmood"><i class="fa-solid fa-building-columns"></i></a></li>
-      </ul>
-    </div>
-
+    <a href="mailto:email5@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
   </div>
+
+  <div class="card">
+    <div class="info">
+      <div class="name">Haroon Mahmood</div>
+      <div class="affiliation">Al-Ain University, UAE</div>
+    </div>
+    <a href="mailto:email6@domain.com" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
 </div>
 </section>
 
@@ -370,28 +333,48 @@
 <div class="section-title">
   <h2>Web Chair</h2>
 </div>
+<div class="row">
 
-<!-- ===== TEAM ===== -->
-<div class="team-container">
-  <div class="row">
-
-    <!-- 1 -->
-    <div class="our-team">
-      <div class="picture">
-        <img src="images/MuhammadHaroon.jpeg">
-      </div>
-      <h3 class="name">Muhammad Haroon</h3>
-      <h4 class="title">Senior Researcher - AISEL</h4>
-      
-      <ul class="social">
-        <li><a href="https://scholar.google.com/citations?hl=en&user=j9QcX1YAAAAJ"><i class="fa-solid fa-graduation-cap"></i></a></li>
-        <li><a href="https://orcid.org/my-orcid?orcid=0009-0000-4776-8090"><i class="fa-brands fa-orcid"></i></a></li>
-        <li><a href="www.linkedin.com/in/muhammad-haroon-47333627a"><i class="fa-brands fa-linkedin"></i></a></li>
-      </ul>
+  <div class="card">
+    <div class="info">
+      <div class="name">Muhammad Haroon</div>
+      <div class="affiliation">Senior Researcher - AISEL</div>
     </div>
-
+    <a href="mailto:i229812@nu.edu.pk" class="email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
   </div>
+
 </div>
+</section>
+
+<section class="text-page">
+      <!-- ===== HEADING ===== -->
+
+<!-- ================= PROGRAM COMMITTEE ================= -->
+<div id="section-title">
+  <h2>Program Committee</h2>
+</div>
+
+<div class="member">
+<strong>Alvine Boaye Belle</strong> — Lassonde School of Engineering, York University, Canada
+</div>
+
+<div class="member">
+<strong>Jan-Philipp Steghöfer</strong> — XITASO GmbH IT & Software Solutions, Germany
+</div>
+
+<div class="member">
+<strong>Renata Medeiros de Carvalho</strong> — Eindhoven University of Technology, Netherlands
+</div>
+
+<div class="member">
+<strong>Darine Ameyed</strong> — Aduna Global, Canada
+</div>
+
+</div>
+</section>
+
 </section>
 
 </main>
