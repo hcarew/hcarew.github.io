@@ -32,7 +32,7 @@ body{
 
 /* ===== HEADER FIX ===== */
 #header {
-    height: 90px;       /* EXACT navbar height */
+    height: 90px;
     width: 100%;
 }
 .header {
@@ -45,16 +45,13 @@ body{
     background: #fcfcfc;
 }
 
-
-
 /* ===== MAIN ===== */
 main {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 40px; /* spacing after header */
+    padding-top: 40px;
 }
-
 
 /* ===== PAGE WRAPPER ===== */
 .cfp-wrapper{
@@ -91,15 +88,6 @@ main {
     border-radius:18px;
     padding:50px;
     box-shadow:0 30px 70px rgba(0,0,0,0.15);
-
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 0.8s ease;
-}
-
-.cfp-card.visible{
-    opacity:1;
-    transform:translateY(0);
 }
 
 .cfp-card p{
@@ -169,76 +157,6 @@ main {
     transform:translateY(-2px);
 }
 
-@media only screen and (max-width: 1024px) {
-
-    header {
-        position: fixed;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    .box-icon {
-        display: flex;
-        position: fixed;
-        top: 22px;
-        right: 20px;
-        z-index: 11000;
-        cursor: pointer;
-    }
-
-    nav ul {
-        position: fixed;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 90px);
-        background-color: #ffffff;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 10px 0;
-        overflow-y: auto;
-
-        box-shadow: 0 10px 25px rgba(0,0,0,.2);
-        z-index: 10000;
-    }
-
-    nav ul.showmenu {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    nav ul li a {
-        padding: 14px 22px;
-        font-size: 16px;
-        width: 100%;
-    }
-
-    nav ul li a.link-btn {
-        margin: 12px 20px;
-        text-align: center;
-    }
-
-    /* MOBILE DROPDOWN */
-    nav ul li ul.dropdown {
-        position: static;
-        display: none;
-        width: 100%;
-        background: #f6f7fb;
-        box-shadow: none;
-    }
-
-    nav ul li.open ul.dropdown {
-        display: block;
-    }
-}
 </style>
 </head>
 
