@@ -189,6 +189,221 @@
   color:#ffd700;
 }
 
+.subtitle{
+text-align:center;
+font-size:18px;
+color:#555;
+margin-top:15px;
+margin-bottom:40px;
+line-height:1.8;
+}
+
+.program-box{
+background:#fff;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+padding:30px;
+margin-bottom:50px;
+}
+
+.program-box h3{
+color:#0a4fa3;
+margin-bottom:20px;
+}
+
+.program-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.program-table th{
+background:#0a4fa3;
+color:#fff;
+padding:15px;
+}
+
+.program-table td{
+padding:14px;
+border-bottom:1px solid #eee;
+}
+
+.program-table tr:hover{
+background:#f5f8ff;
+}
+
+.timeline{
+max-width:1100px;
+margin:auto;
+}
+
+.session{
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+margin-bottom:35px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.session-header{
+background:#0a4fa3;
+color:#fff;
+padding:18px 25px;
+font-size:22px;
+font-weight:700;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.keynote{
+background:#6b3fe0;
+}
+
+.event,
+.paper{
+display:flex;
+padding:22px;
+border-bottom:1px solid #eee;
+transition:.3s;
+}
+
+.paper:hover,
+.event:hover{
+background:#f5f8ff;
+}
+
+.paper-time,
+.time{
+width:100px;
+font-weight:700;
+color:#0a4fa3;
+}
+
+.paper-info,
+.content{
+flex:1;
+}
+
+.paper-id{
+background:#0a4fa3;
+color:#fff;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.paper h4{
+margin:8px 0;
+font-size:20px;
+color:#222;
+}
+
+.paper p{
+margin:0;
+color:#666;
+line-height:1.7;
+}
+
+.badge{
+display:inline-block;
+margin-top:15px;
+padding:6px 14px;
+border-radius:40px;
+font-size:12px;
+font-weight:bold;
+}
+
+.full{
+background:#dff5e5;
+color:#168b43;
+}
+
+.short{
+background:#fff2ce;
+color:#b27600;
+}
+
+.keynote-badge{
+background:#ece3ff;
+color:#6b3fe0;
+}
+
+.panel{
+background:#eef4ff;
+padding:18px;
+font-weight:bold;
+color:#0a4fa3;
+text-align:center;
+}
+
+.break{
+background:#f4f4f4;
+padding:18px;
+font-size:20px;
+font-weight:bold;
+text-align:center;
+margin:30px 0;
+border-radius:12px;
+}
+
+.lunch{
+background:#fff5d8;
+}
+
+.closing{
+padding:20px;
+text-align:center;
+font-weight:bold;
+font-size:18px;
+color:#0a4fa3;
+}
+
+@media(max-width:768px){
+
+.session-header{
+display:block;
+text-align:center;
+}
+
+.paper,
+.event{
+flex-direction:column;
+}
+
+.paper-time,
+.time{
+margin-bottom:15px;
+}
+
+.program-table{
+font-size:14px;
+}
+
+}
+
+
+/* ===== Enhanced animations ===== */
+body{animation:fadeIn .7s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.session{transition:.35s ease;animation:fadeUp .6s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.session:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(10,79,163,.15)}
+.paper:hover,.event:hover{background:#f7fbff;transform:translateX(6px);border-left:4px solid #0a4fa3}
+.section-title h2{font-size:30px}
+.subtitle{font-size:16px}
+.program-box h3{font-size:20px}
+.program-table th{font-size:14px}
+.program-table td{font-size:13px}
+.session-header{font-size:19px}
+.paper h4{font-size:17px}
+.paper p{font-size:13px;line-height:1.6}
+.paper-time,.time{font-size:13px}
+.badge{font-size:11px}
+.break{font-size:18px;transition:.3s}
+.break:hover{transform:translateY(-3px)}
+
 </style>
 
 </head>
@@ -198,23 +413,401 @@
   <div id="header" class="header"></div>
 
   <main>
-    <section class="text-page">
-      <!-- ===== HEADING ===== -->
+   <section class="text-page">
+
 <div class="section-title">
-  <h2>Program</h2>
+    <h2>HCARE 2026 Program</h2>
+    <p class="subtitle">
+        Human-Centered AI for Requirements Engineering (HCARE 2026)<br>
+        <strong>Monday, 17 August 2026</strong><br>
+        ÉTS Montréal • Room E-2023
+    </p>
 </div>
 
-<!-- ===== TEAM ===== -->
-<div class="team-container">
-  <div class="row">
-    <div class="our-team">
-        Program: 
-        To be announced (TBA)
-    </div>
-  </div>
+<!-- ============================= -->
+<!-- Program At A Glance -->
+<!-- ============================= -->
+
+<div class="program-box">
+
+<h3><i class="fa-solid fa-calendar-days"></i> Schedule at a Glance</h3>
+
+<table class="program-table">
+
+<thead>
+<tr>
+<th>Time</th>
+<th>Activity</th>
+<th>Duration</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>09:00–09:15</td>
+<td>Opening & Welcome</td>
+<td>15 min</td>
+</tr>
+
+<tr>
+<td>09:15–10:15</td>
+<td>Keynote</td>
+<td>60 min</td>
+</tr>
+
+<tr>
+<td>10:15–10:30</td>
+<td>Q&A</td>
+<td>15 min</td>
+</tr>
+
+<tr>
+<td>10:30–11:00</td>
+<td>Coffee Break</td>
+<td>30 min</td>
+</tr>
+
+<tr>
+<td>11:00–12:30</td>
+<td>Session 2</td>
+<td>90 min</td>
+</tr>
+
+<tr>
+<td>12:30–13:45</td>
+<td>Lunch</td>
+<td>75 min</td>
+</tr>
+
+<tr>
+<td>13:45–15:15</td>
+<td>Session 3</td>
+<td>90 min</td>
+</tr>
+
+<tr>
+<td>15:15–15:45</td>
+<td>Coffee Break</td>
+<td>30 min</td>
+</tr>
+
+<tr>
+<td>15:45–17:15</td>
+<td>Session 4 + Closing</td>
+<td>90 min</td>
+</tr>
+
+</tbody>
+
+</table>
+
 </div>
 
-    </section>
+
+<!-- Timeline -->
+
+<div class="timeline">
+
+<!-- Session -->
+
+<div class="session">
+
+<div class="session-header keynote">
+Session 1 • Opening & Keynote
+<span>09:00–10:30</span>
+</div>
+
+<div class="event">
+<div class="time">09:00</div>
+
+<div class="content">
+<h4>Opening & Welcome</h4>
+<p>Workshop Chairs</p>
+</div>
+</div>
+
+<div class="event">
+<div class="time">09:15</div>
+
+<div class="content">
+<h4>Keynote</h4>
+
+<h3>Requirements Engineering Meets Physical AI: Lessons from Human-Autonomy Teaming</h3>
+
+<p><strong>Dr. Jane Cleland-Huang</strong><br>
+University of Notre Dame</p>
+
+<span class="badge keynote-badge">Keynote</span>
+
+</div>
+</div>
+
+<div class="event">
+<div class="time">10:15</div>
+
+<div class="content">
+<h4>Keynote Discussion</h4>
+<p>Audience Q&A</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="break">
+☕ Coffee Break
+</div>
+
+
+
+<!-- SESSION 2 -->
+
+<div class="session">
+
+<div class="session-header">
+Session 2 • Human-AI Collaboration & Decision-Making in RE
+<span>11:00–12:30</span>
+</div>
+
+<div class="paper">
+
+<div class="paper-time">11:00</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#21</span>
+
+<h4>Collaborative and AI-Supported Requirements Elicitation</h4>
+
+<p>Manoel Salgado Neto, Allan Araujo, Ronnie de Souza Santos</p>
+
+<span class="badge full">Full Paper</span>
+
+</div>
+
+</div>
+
+
+<div class="paper">
+
+<div class="paper-time">11:20</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#22</span>
+
+<h4>Integrating AI Bots into Collaborative Requirements Decision-Making</h4>
+
+<p>Israel Mateos-Aparicio-Ruiz, Pedro Montealegre-Macias, Julio Alberto Lopez-Gomez, Oscar Deniz, Gloria Bueno</p>
+
+<span class="badge full">Full Paper</span>
+
+</div>
+
+</div>
+
+
+<div class="paper">
+
+<div class="paper-time">11:40</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#11</span>
+
+<h4>Structured Interactions with LLMs to Support LTL</h4>
+
+<p>Karenna Kung, Maanas Punuru, Alicia M. Grubb, Paola Spoletini</p>
+
+<span class="badge full">Full Paper</span>
+
+</div>
+
+</div>
+
+<div class="panel">
+Mini Panel • All Session Speakers
+</div>
+
+</div>
+
+
+
+<div class="break lunch">
+🍽 Lunch Break
+</div>
+
+
+
+<!-- SESSION 3 -->
+
+<div class="session">
+
+<div class="session-header">
+Session 3 • Responsible & Forward-Looking RE
+<span>13:45–15:15</span>
+</div>
+
+
+<div class="paper">
+<div class="paper-time">13:45</div>
+
+<div class="paper-info">
+<span class="paper-id">#23</span>
+
+<h4>Justice as a Non-Functional Requirement</h4>
+
+<p>Fangyuan Cao, Sanaa Alwidian</p>
+
+<span class="badge full">Full Paper</span>
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-time">14:05</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#18</span>
+
+<h4>Toward Bias-Aware and Responsible AI-Assisted RE</h4>
+
+<p>Fangyuan Cao, Soumayya Hassan, Sanaa Alwidian, Barbara Perry</p>
+
+<span class="badge short">Short Paper</span>
+
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-time">14:20</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#17</span>
+
+<h4>Reimagining Software Engineering without Programming</h4>
+
+<p>Alex Dekhtyar</p>
+
+<span class="badge short">Short Paper</span>
+
+</div>
+</div>
+
+<div class="paper">
+
+<div class="paper-time">14:35</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#20</span>
+
+<h4>Towards Systematic RE Employing Foundation Models</h4>
+
+<p>Sravan Thatireddy, Bhavishya Swami, Prerana Joardar, Marian Daun</p>
+
+<span class="badge short">Short Paper</span>
+
+</div>
+
+</div>
+
+<div class="panel">
+Mini Panel • All Speakers
+</div>
+
+</div>
+
+
+
+<div class="break">
+☕ Coffee Break
+</div>
+
+
+
+<!-- SESSION 4 -->
+
+<div class="session">
+
+<div class="session-header">
+Session 4 • Classification, Screening & Ambiguity Detection
+<span>15:45–17:15</span>
+</div>
+
+<div class="paper">
+
+<div class="paper-time">15:45</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#12</span>
+
+<h4>Classifying Conversations from Real World Software Projects</h4>
+
+<p>Caio Moussa Assumpção, Fabio Levy Siqueira, João Marcos de Mattos Barguil, Julio Cesar Sampaio do Prado Leite</p>
+
+<span class="badge full">Full Paper</span>
+
+</div>
+
+</div>
+
+
+<div class="paper">
+
+<div class="paper-time">16:05</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#15</span>
+
+<h4>Keeping Engineers in the Loop: Explainable Requirement Defect Screening</h4>
+
+<p>Awaiz Ahmed, Mohammad Umar</p>
+
+<span class="badge short">Short Paper</span>
+
+</div>
+
+</div>
+
+
+<div class="paper">
+
+<div class="paper-time">16:20</div>
+
+<div class="paper-info">
+
+<span class="paper-id">#19</span>
+
+<h4>Toward Engineer-Centered Ambiguity Detection in Regulated RE</h4>
+
+<p>Amarachi Nwosu, Sanaa Alwidian</p>
+
+<span class="badge short">Short Paper</span>
+
+</div>
+
+</div>
+
+<div class="panel">
+Mini Panel • Closing Discussion
+</div>
+
+<div class="closing">
+17:05–17:15 • Closing Remarks
+</div>
+
+</div>
+
+</div>
+
+</section>
   </main>
 
   <!-- Footer is included here by JS - check scripts.js  -->
