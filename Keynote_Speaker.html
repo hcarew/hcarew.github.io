@@ -205,6 +205,281 @@
 }
 
 
+/*======================================*/
+/* Speaker Card */
+/*======================================*/
+
+.speaker-card{
+
+max-width:1000px;
+margin:0 auto 40px;
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+background:#fff;
+
+padding:30px;
+
+border-radius:16px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+animation:fadeUp .8s;
+
+}
+
+.speaker-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.speaker-image{
+
+flex:0 0 250px;
+
+text-align:center;
+
+}
+
+.speaker-image img{
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid white;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.speaker-image img:hover{
+
+transform:scale(1.05);
+
+}
+
+.speaker-content{
+
+flex:1;
+
+}
+
+.speaker-tag{
+
+display:inline-block;
+
+padding:6px 16px;
+
+background:#0a4fa3;
+
+color:white;
+
+font-size:12px;
+
+border-radius:40px;
+
+margin-bottom:15px;
+
+}
+
+.speaker-content h2{
+
+font-size:28px;
+
+color:#0a4fa3;
+
+margin-bottom:8px;
+
+}
+
+.speaker-content h4{
+
+font-size:16px;
+
+font-weight:500;
+
+color:#666;
+
+margin-bottom:18px;
+
+line-height:1.7;
+
+}
+
+.speaker-meta{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-bottom:22px;
+
+}
+
+.speaker-meta span{
+
+background:#eef5ff;
+
+padding:8px 15px;
+
+border-radius:30px;
+
+font-size:13px;
+
+color:#0a4fa3;
+
+}
+
+.talk-title{
+
+font-size:21px;
+
+color:#222;
+
+margin-bottom:18px;
+
+line-height:1.6;
+
+}
+
+.speaker-content p{
+
+font-size:14px;
+
+line-height:1.9;
+
+color:#555;
+
+text-align:justify;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.speaker-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.speaker-meta{
+
+justify-content:center;
+
+}
+
+}
+
+/*=====================================*/
+/* INFO CARD */
+/*=====================================*/
+
+.info-card{
+
+max-width:1000px;
+
+margin:0 auto 35px;
+
+background:#fff;
+
+padding:30px;
+
+border-radius:16px;
+
+box-shadow:0 10px 28px rgba(0,0,0,.08);
+
+transition:.35s;
+
+animation:fadeUp .9s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.info-card h3{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:#0a4fa3;
+
+font-size:22px;
+
+margin-bottom:22px;
+
+}
+
+.info-card h3 i{
+
+font-size:20px;
+
+}
+
+.info-card p{
+
+font-size:14px;
+
+line-height:1.9;
+
+text-align:justify;
+
+margin-bottom:16px;
+
+color:#555;
+
+}
+
+
+
 
 </style>
 
@@ -215,24 +490,198 @@
   <div id="header" class="header"></div>
 
   <main>
-    <section class="text-page">
-      <!-- ===== HEADING ===== -->
-<div class="section-title">
-  <h2>Keynote Speaker</h2>
-</div>
 
-<!-- ===== TEAM ===== -->
-<div class="team-container">
-  <div class="row">
-    <div class="our-team">
-        Keynote speaker: 
-        To be announced (TBA)
+<section class="text-page">
+
+    <!-- =========================== -->
+    <!-- PAGE TITLE -->
+    <!-- =========================== -->
+
+    <div class="section-title">
+
+        <h2>Keynote Speaker</h2>
+
+        <p style="margin-top:12px;font-size:14px;color:#666;">
+            Human-Centered AI for Requirements Engineering (HCARE 2026)
+        </p>
+
     </div>
-  </div>
-</div>
 
-    </section>
-  </main>
+
+    <!-- =========================== -->
+    <!-- SPEAKER CARD -->
+    <!-- =========================== -->
+
+    <div class="speaker-card">
+
+        <div class="speaker-image">
+
+            <img src="images/JaneHeadShot.jpg"
+                 alt="Dr. Jane Cleland-Huang">
+
+        </div>
+
+
+        <div class="speaker-content">
+
+            <span class="speaker-tag">
+                Keynote Speaker
+            </span>
+
+            <h2>
+                Dr. Jane Cleland-Huang
+            </h2>
+
+            <h4>
+                Frank M. Freimann Professor & Chair
+                <br>
+                University of Notre Dame
+            </h4>
+
+            <div class="speaker-meta">
+
+                <span>
+                    <i class="fa-solid fa-calendar"></i>
+                    Monday, 17 August 2026
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    09:15 – 10:15
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    ÉTS Montréal
+                </span>
+
+            </div>
+
+            <h3 class="talk-title">
+                Requirements Engineering Meets Physical AI:
+                Lessons from Human-Autonomy Teaming
+            </h3>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================== -->
+    <!-- ABSTRACT -->
+    <!-- =========================== -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-file-lines"></i>
+            Abstract
+        </h3>
+
+        <p>
+
+            Generative AI and autonomous agents are rapidly becoming part of
+            Requirements Engineering (RE) practice, supporting activities such as
+            elicitation, analysis, prioritization, and decision-making. As these
+            systems assume increasingly active roles, RE faces challenges that
+            extend beyond automation, including questions of trust, oversight,
+            accountability, and the appropriate division of responsibility
+            between humans and AI.
+
+        </p>
+
+        <p>
+
+            This keynote examines these challenges through the lens of Physical AI
+            and Human-Autonomy Teaming. Drawing on lessons from the DroneResponse
+            project, a multi-operator, multi-UAV platform developed to study
+            coordination, situational awareness, and supervisory control in
+            human-autonomy teams, it explores parallels between operators
+            supervising autonomous physical systems and requirements engineers
+            collaborating with AI assistants and intelligent agents.
+
+        </p>
+
+        <p>
+
+            Across both settings, effective outcomes depend not only on the
+            capabilities of AI systems, but also on maintaining calibrated trust,
+            shared mental models, and meaningful human oversight.
+
+        </p>
+
+        <p>
+
+            The keynote explores how these principles help ensure that AI
+            augments rather than diminishes human expertise while supporting
+            effective collaboration between human stakeholders and autonomous
+            partners.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================== -->
+    <!-- BIOGRAPHY -->
+    <!-- =========================== -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-user-graduate"></i>
+            Speaker Biography
+        </h3>
+
+        <p>
+
+            Dr. Jane Cleland-Huang is the Frank M. Freimann Professor and Chair
+            of the Department of Computer Science and Engineering at the
+            University of Notre Dame. She received her Ph.D. in Computer Science
+            from the University of Illinois at Chicago and also holds an honorary
+            doctorate from the University of Gothenburg.
+
+        </p>
+
+        <p>
+
+            Her research focuses on Requirements Engineering,
+            Human–Machine Interaction, Autonomous Systems,
+            and sUAS Safety Assurance. She directs the Software and Requirements
+            Engineering Research Laboratory, where she leads the internationally
+            recognized DroneResponse project, including a spin-off initiative
+            supporting emergency response and disaster relief.
+
+        </p>
+
+        <p>
+
+            Dr. Cleland-Huang has served as Program Chair for numerous leading
+            software engineering conferences, including the IEEE Requirements
+            Engineering Conference, ESEC/FSE, ICSE, CAIN, and SPLC. She has also
+            served as Associate Editor for IEEE Transactions on Software
+            Engineering and on several international editorial boards.
+
+        </p>
+
+        <p>
+
+            Her research has received seven ACM SIGSOFT Distinguished Paper
+            Awards, the Mannfred Paul Award for Excellence in Software Theory and
+            Practice, and two CHI Honorary Mentions. Before joining academia,
+            she worked in refugee camps in South Asia, an experience that shaped
+            her commitment to developing technologies that promote human dignity,
+            inclusion, and societal impact.
+
+        </p>
+
+    </div>
+
+</section>
+
+</main>
 
   <!-- Footer is included here by JS - check scripts.js  -->
   <div id="footer"></div>
