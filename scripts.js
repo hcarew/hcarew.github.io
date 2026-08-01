@@ -16,7 +16,7 @@ function loadComponents() {
             <li><a href="index.html">Home</a></li>
             <li><a href="dates.html">Important Dates</a></li>
             <li><a href="Call_For_Paper.html">Call For Papers</a></li>
-            <li><a href="Procedings.html">Program</a></li>
+            <li><a href="Program.html">Program</a></li>
             <li><a href="Organizing_Committee.html">Committees</a></li>
             <li><a href="Contact.html">Contact</a></li>
             <li><a href="#" class="link-btn">Registration</a></li>
